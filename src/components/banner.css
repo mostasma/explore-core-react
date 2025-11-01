@@ -1,0 +1,59 @@
+.banner-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.banner-card {
+  height: 140px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+/* In-Progress (purple gradient) */
+.banner-card.purple {
+  background: linear-gradient(135deg, #7b3ff3 0%, #5a1fd3 100%);
+}
+
+/* Resolved (green gradient) */
+.banner-card.green {
+  background: linear-gradient(135deg, #1db954 0%, #009b72 100%);
+}
+
+/* add subtle curved diagonal line pattern */
+.banner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0px,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  opacity: 0.4;
+}
+
+.banner-card h4 {
+  z-index: 1;
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+.banner-card p {
+  z-index: 1;
+  margin: 8px 0 0 0;
+  font-size: 36px;
+  font-weight: 700;
+}
